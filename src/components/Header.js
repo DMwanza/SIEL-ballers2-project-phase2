@@ -1,9 +1,9 @@
 import React from "react";
-import logo1 from '../images/logo1.jpg'
+import logo1 from "../images/logo1.jpg";
 function Header({ isDarkMode, onDarkModeClick }) {
   return (
     <header>
-      <img src={logo1} className="img"/>
+      <img src={logo1} className="img" alt="logoo" />
       <button onClick={onDarkModeClick}>
         {isDarkMode ? "Dark" : "Light"} Mode
       </button>
