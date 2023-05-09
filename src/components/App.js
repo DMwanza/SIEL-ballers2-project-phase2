@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./Header";
-import ItemForm from "./ItemForm";
-import Item from "./Item";
+// import ItemForm from "./ItemForm";
+// import Item from "./Item";
 import GameList from "./GameList";
 import { Route, Routes } from "react-router-dom";
 import Home from "./Home";
@@ -9,7 +9,7 @@ import NavBar from "./NavBar";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [page, setPage] = useState("/");
+  // const [page, setPage] = useState("/");
   function handleDarkModeClick() {
     setIsDarkMode(!isDarkMode);
   }
