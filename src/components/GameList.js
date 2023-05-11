@@ -7,7 +7,7 @@ function GameList() {
   const [team, setTeam] = useState("");
   const [games, setGames] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:3000/games").then((res) =>
+    fetch("https://my-json-server.typicode.com/DMwanza/SIEL-ballers2-project-phase2B/games").then((res) =>
       res.json().then((games) => setGames(games))
     );
   }, []);
@@ -22,9 +22,15 @@ function GameList() {
     setGames(updatedItems);
   }
   function handleDeleteItem(deletedItem) {
-    const updatedItems = games.filter((game) => game.id !== deletedItem.id);
-    setGames(updatedItems);
+    if (Array.isArray(games)) {
+      const updatedItems = games.filter((game) => game.id !== deletedItem.id);
+      setGames(updatedItems);
+    } else {
+      // Handle the case when games is not an array
+      console.error('games is not an array');
+    }
   }
+  
   function handleAddItem(newGame) {
     setGames([...games, newGame]);
   }
